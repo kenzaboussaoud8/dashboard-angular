@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FirebaseAuthService } from './providers/firebase-auth.service';
 
+// Authentification 
+
 
 @Component({
   selector: 'app-root',
@@ -12,11 +14,9 @@ export class AppComponent {
   user = { login: "", password: "" };
 
   constructor(private firebaseAuth: FirebaseAuthService) {
-    this.firebaseAuth.SignUp(this.user.login, this.user.password)
-
   }
   submitForm() {
     console.log("Zoubida")
-
+    this.firebaseAuth.SignUp(this.user.login, this.user.password);
   }
 }
